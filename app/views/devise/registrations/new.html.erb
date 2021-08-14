@@ -1,0 +1,50 @@
+<div style="background-image: url(background2.png); background-repeat: repeat-y;">
+  <div class="container" style="width: 30%; margin-bottom: 50px; margin-top: 50px;">
+    <span>Bắt đầu thôi</span>
+    <h2>Đăng ký nào</h2>
+    <span>Bạn đã có tài khoản ?</span> <%= link_to "Đăng nhập", new_session_path(resource_name) %><br /><br />
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form-group">
+        <%= f.label :email, class: 'f-s-15' %><br />
+        <div class="inner-addon right-addon">
+          <span class="icon-add">@</span>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-input-devise", placeholder: "nam@mail.com" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, class: 'f-s-15' %>
+        <% if @minimum_password_length %>
+<!--        <em>(<%#= @minimum_password_length %> characters minimum)</em>-->
+        <% end %><br />
+        <div class="inner-addon right-addon">
+          <i class="fas fa-lock icon-add"></i>
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-input-devise", placeholder: '8 kí tự, 1 kí tự viết hoa' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, class: 'f-s-15' %><br />
+        <div class="inner-addon right-addon">
+          <i class="fas fa-lock icon-add"></i>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-input-devise", placeholder: '********' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Tạo tài khoản", class: "form-control button_devise" %>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= button_tag class: "form-control button_devise_google" do%>
+          <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'link_google' do%>
+            <%= image_tag('icon-google.png') %>
+            <span> Đăng nhập với Google</span>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

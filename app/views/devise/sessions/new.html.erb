@@ -1,0 +1,40 @@
+<div style="background-image: url(background2.png); background-repeat: repeat-y;">
+  <div class="container" style="width: 30%; margin-bottom: 50px; margin-top: 50px;">
+    <h2>Đăng nhập</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-group">
+        <%= f.label "E-mail", class: 'f-s-15' %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "nam@mail.com", class: "form-control form-input-devise icon" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, class: 'f-s-15' %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-input-devise", placeholder: '********' %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.submit "Đăng nhập", class: "form-control button_devise" %>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= button_tag class: "form-control button_devise_google" do%>
+        <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'link_google' do%>
+          <%= image_tag('icon-google.png') %>
+          <span> Đăng nhập với Google</span>
+        <% end %>
+      <% end %>
+    </div>
+
+    <%= render "devise/shared/links" %>
+  </div>
+
+</div>
