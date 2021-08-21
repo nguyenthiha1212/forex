@@ -9,25 +9,12 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
   </head>
 
-  <body style="background-color: #f0f0f0">
-  <section>
-    <div class="container" style="width: 60%;">
-      <div class="row justify-content-center align-items-center header-height">
-        <div class="col-md-4 text-left">
-          <%= image_tag 'logo.png' %>
-        </div>
-        <div class="col-md-8 text-center">
-          <%= image_tag 'logo1.png', style: "height: 145px;" %>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section style="height: 57px; background-color: #111E3C;" >
-    <div class="container">
-    </div>
-  </section>
+  <body>
     <%= yield %>
   <section>
     <div class="container-fluid" style="height:270px;background-color: #1F1F1F;">
