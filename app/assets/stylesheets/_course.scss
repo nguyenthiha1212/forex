@@ -1,0 +1,257 @@
+.head-time {
+  height: 95px;
+  border-bottom: 1px #BBBDBF solid;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  ul {
+    flex-direction: row;
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    margin: 0;
+    .user-login {
+      img {
+        border-radius: 50%;
+        width: 36.5px;
+      }
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    justify-content: space-between;
+    ul {
+      li {
+        font-size: 10px;
+      }
+    }
+  }
+}
+.process {
+  text-align: center;
+  position: relative;
+  .img-process {
+    width: 90%;
+  }
+  .complete-rate {
+    background-color: #2D5FDE;
+    color: #5FE8FF;
+    position: absolute;
+    left: 28%;
+    top: 5%;
+    height: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28.3%;
+    z-index: 9999;
+  }
+
+  @media (max-width: 1199.98px) {
+    height: 45px;
+  }
+
+  @media (max-width: 991.98px) {
+    .complete-rate {
+      height: 40px;
+    }
+  }
+  @media (max-width: 767.98px) {
+    .complete-rate {
+      height: 29px;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .complete-rate {
+      height: 29px;
+    }
+  }
+  @media (max-width: 529.98px) {
+    .complete-rate {
+      height: 18px;
+      font-size: 12px;
+    }
+  }
+}
+
+.course-content {
+  .course-title {
+    .icon-round {
+      background-color: #5FE8FF;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      position: relative;
+      top: 28px;
+      left: -18px;
+      z-index: 1;
+    }
+    .title {
+      position: relative;
+      z-index: 100;
+    }
+  }
+
+  .content-list {
+    .content-item {
+      background-color: #F0F4FA;
+      color: #929497;
+      text-decoration: none;
+      .title {
+        .number {
+          padding: 0 2px;
+        }
+      }
+      .pull-right {
+        text-align: end;
+        .time-learn {
+          border-left: #383838 1px solid;
+        }
+        .status {
+          button.btn {
+            padding: 1px 15px;
+          }
+        }
+      }
+      .time-learn {
+        color: #000000 !important;
+      }
+      &.learned {
+        color: #929497;
+        .pull-right {
+          .status {
+            color: #8BC53F;
+          }
+        }
+      }
+      &.learning {
+        .title {
+          color: #000000;
+          .icon {
+            color: #2D5FDE;
+          }
+          .number{
+            color: #929497;
+          }
+        }
+        .pull-right {
+          .status {
+            color: #2D5FDE;
+          }
+        }
+      }
+    }
+  }
+}
+
+.course-box {
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+
+  .course-content-detail {
+    width: calc(100% - 350px);
+    background-color: white;
+    float: right;
+    margin-top: 0px;
+    max-width: calc(100% - 350px);
+    margin-left: 0px;
+    min-height: calc(100vh - 200px);
+    .content-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h3 {
+        color: #2D5FDE;
+      }
+    }
+    .content {
+      background-color: #F1F1F2;
+      width: 100%;
+      height: calc(100vh - 250px);
+      min-height: 90%;
+      overflow: scroll;
+      overflow-x: hidden;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .nav-side-menu {
+    font-size: 14px;
+    font-weight: 200;
+    color: white;
+    height: calc(100vh - 200px);
+    min-height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: block;
+    .course-title {
+      .title {
+        color: #383838;
+        h4 {
+          font-size: 19px;
+        }
+      }
+    }
+  }
+  .menu-toggler {
+    display: none;
+  }
+
+  @media (max-width: 991.98px) {
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    .menu-toggler {
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+    .nav-side-menu {
+      display: none;
+      //position: fixed;
+      z-index: 23;
+      &.show {
+        display: block !important;
+      }
+      height: 250px;
+      background-color: #f8f9fa !important;
+    }
+    .course-content-detail {
+      margin-top: 2rem;
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  @media (max-width: 767.98px) {
+    .menu-toggler {
+      h3 {
+        font-size: 21px;
+      }
+    }
+    .course-content-detail {
+      .content-title {
+        h3 {
+          font-size: 21px;
+        }
+        button {
+          font-size: 10px;
+        }
+      }
+    }
+    .nav-side-menu {
+      .course-title {
+        .title {
+          h4 {
+            font-size: 16px;
+          }
+        }
+      }
+      height: 200px;
+    }
+  }
+}

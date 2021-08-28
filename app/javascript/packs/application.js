@@ -11,7 +11,12 @@ import 'lib/js/jquery.min'
 import 'lib/js/bootstrap.min'
 import 'lib/js/popper.min'
 import "@fortawesome/fontawesome-free/css/all"
+import 'js/course'
+var jQuery = require('jquery')
 
+
+global.$ = global.jQuery = jQuery;
+window.$ = window.jQuery = jQuery;
 
 Rails.start()
 Turbolinks.start()
