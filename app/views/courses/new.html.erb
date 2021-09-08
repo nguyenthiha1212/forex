@@ -1,0 +1,14 @@
+<%= javascript_include_tag Ckeditor.cdn_url %>
+<div class="container">
+  <h2>Tạo mới một khoá học </h2>
+  <%=  form_tag "/courses" do %>
+    <%= select_tag "section_id", options_for_select(Section.all.pluck(:title, :id)), class: "form-control" %>
+    <br>
+    <%= text_field_tag "title", "", class: "form-control" %>
+    <br>
+    <%= cktext_area_tag "content", "asdfaf" %>
+    <br>
+    <%= submit_tag "Tao moi", class: "btn btn-primary" %>
+    <br>
+  <% end %>
+</div>

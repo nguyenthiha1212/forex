@@ -22,28 +22,31 @@
   </div>
 </div>
 <div class="container mt-1 mb-5">
+  <% Section.all.each do |section| %>
   <div class="course-content">
     <div class="course-title mt-2 mb-4">
       <div class="icon-round"></div>
       <div class="title">
-        <h4>Section 1: Bạn biết gì về thị trường Forrex</h4>
+        <h4><%= section.title %></h4>
       </div>
     </div>
     <div class="content-list pr-4 pl-4">
-      <a href="#" class="content-item row pt-3 pb-3 learned mb-1">
-        <div class="title col-md-8">
-          <span class="pl-1 pr-2">1</span>
-          <i class="far fa-file-alt pl-1 pr-2 icon"></i>
-          Gioi thieu chung
-        </div>
-        <div class="pull-right col-md-4">
-          <span class="status pr-2">Đã học</span>
-          <span class="time-learn pl-2 pr-4">
-          <i class="far fa-clock"></i>
-          35 min
-        </span>
-        </div>
-      </a>
+      <% section.courses.each do |course| %>
+        <a href="/courses/<%= course.id %>" class="content-item row pt-3 pb-3 learned mb-1">
+          <div class="title col-md-8">
+            <span class="pl-1 pr-2">1</span>
+            <i class="far fa-file-alt pl-1 pr-2 icon"></i>
+            <%= course.title %>
+          </div>
+          <div class="pull-right col-md-4">
+            <span class="status pr-2">Đã học</span>
+            <span class="time-learn pl-2 pr-4">
+            <i class="far fa-clock"></i>
+            35 min
+          </span>
+          </div>
+        </a>
+      <% end %>
 
       <a href="#" class="content-item row pt-3 pb-3 learning mb-1">
         <div class="title col-md-8">
@@ -78,6 +81,7 @@
       </a>
     </div>
   </div>
+  <% end %>
   <div class="course-content">
     <div class="course-title mt-2 mb-4">
       <div class="icon-round"></div>
