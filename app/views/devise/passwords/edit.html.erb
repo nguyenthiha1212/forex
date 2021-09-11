@@ -1,35 +1,39 @@
-<div style="background-image: url(background2.png); background-repeat: repeat-y;">
-  <div class="container" style="width: 30%; margin-bottom: 50px; margin-top: 50px;">
-    <h2>Đổi mật khẩu</h2>
+<div class="bg-sign">
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-lg-4 offset-lg-4">
+        <h2>Đổi mật khẩu</h2>
 
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-      <%= f.hidden_field :reset_password_token %>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <%= f.hidden_field :reset_password_token %>
 
-      <div class="form-group">
-        <%= f.label :password, "New password", class: 'f-s-15' %><br />
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+          <div class="form-group">
+            <%= f.label :password, "New password", class: 'f-s-15' %><br />
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+            <% end %>
+            <div class="inner-addon right-addon">
+              <i class="fas fa-lock icon-add"></i>
+              <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control form-input-devise", placeholder: '********' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password_confirmation, "Confirm new password" %><br />
+            <div class="inner-addon right-addon">
+              <i class="fas fa-lock icon-add"></i>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-input-devise", placeholder: '********' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Change my password", class: "form-control button_devise" %>
+          </div>
         <% end %>
-        <div class="inner-addon right-addon">
-          <i class="fas fa-lock icon-add"></i>
-          <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control form-input-devise", placeholder: '********' %>
-        </div>
-      </div>
 
-      <div class="form-group">
-        <%= f.label :password_confirmation, "Confirm new password" %><br />
-        <div class="inner-addon right-addon">
-          <i class="fas fa-lock icon-add"></i>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-input-devise", placeholder: '********' %>
-        </div>
+        <%= render "devise/shared/links" %>
       </div>
-
-      <div class="form-group">
-        <%= f.submit "Change my password", class: "form-control button_devise" %>
-      </div>
-    <% end %>
-
-    <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>

@@ -1,0 +1,52 @@
+.bg-footer {
+  background-color: #1F1F1F;
+}
+
+.cp-right {
+  background-color: #282827;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'SVN-NexaBook';
+  color: #6D6E70;
+}
+
+
+.terms-sign {
+  a {
+    color: white;
+  }
+  .btn-sign {
+    border-radius: 20px;
+    padding: 10px 25px;
+    @media (max-width: 575.98px) {
+      display: none;
+    }
+  }
+}
+
+.logo-footer {
+  .text-contact {
+    padding-top: 1.5rem;
+    display: flex;
+    span {
+      color: white;
+    }
+    p {
+      color: #929497;
+    }
+  }
+  @media (max-width: 575.98px) {
+    text-align: center;
+    .text-contact {
+      justify-content: center;
+    }
+  }
+}
+
+.f-btn-signup {
+  display: none;
+  @media (max-width: 575.98px) {
+    display: block;
+  }
+}
